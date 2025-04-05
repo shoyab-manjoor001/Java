@@ -5,6 +5,8 @@ import java.util.List;
 public class SortedEx {
 
     public static void main(String[] args) {
+
+        // Arraylist of Integer Objects.
         ArrayList<Integer> alist = new ArrayList<Integer>();
         alist.add(45);
         alist.add(56);
@@ -14,17 +16,27 @@ public class SortedEx {
         alist.add(32);
         alist.add(68);
         alist.add(33);
-        System.out.println("List before Sorting: " + alist);
+        System.out.println("\nList before Sorting: " + alist);
 
-        System.out.println("List After Sorting: " + alist.stream().sorted().toList());
+        // Sorting using Natural sorting (Uses Comparable Internally)
+        System.out.println("\nList After Sorting: " + alist.stream().sorted().toList());
 
-        // List<Integer> ar = alist.stream().sorted((i1, i2) -> ((i1 < i2) ? 1 : (i1 >
-        // i2) ? -1 : 0)).toList();
-
-        System.out.println("Sorting in Descending oreder: "
+        // Sorting using Comparator Inetrface.. DESCENDING ORDER.
+        System.out.println("\nSorting in Descending oreder: m1 "
                 + alist.stream().sorted((i1, i2) -> ((i1 < i2) ? 1 : (i1 > i2) ? -1 : 0)).toList());
 
-        System.out.println("Sorting in Ascending Order: "
+        // OR
+        // Sorting using Comparator Inetrface.. DESCENDING ORDER.
+        System.out.println("\nSorting in Descending oreder: m2 "
+                + alist.stream().sorted((i1, i2) -> -i1.compareTo(i2)).toList());
+
+        // OR
+        // Sorting using Comparator Inetrface.. DESCENDING ORDER.
+        System.out.println("\nSorting in Descending oreder: m3 "
+                + alist.stream().sorted((i1, i2) -> i2.compareTo(i1)).toList());
+
+        // Sorting using Comparator Inetrface..ASCENDING OREDER.
+        System.out.println("\nSorting in Ascending Order: "
                 + alist.stream().sorted((i1, i2) -> ((i1 < i2) ? -1 : (i1 < i2) ? 1 : 0)).toList());
 
     }
