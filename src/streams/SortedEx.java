@@ -1,9 +1,13 @@
-
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class SortedEx {
 
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
 
         // Arraylist of Integer Objects.
@@ -39,5 +43,25 @@ public class SortedEx {
         System.out.println("\nSorting in Ascending Order: "
                 + alist.stream().sorted((i1, i2) -> ((i1 < i2) ? -1 : (i1 < i2) ? 1 : 0)).toList());
 
+        // String Examples...
+
+        List<String> names = Arrays.asList("Rohit Sharma", "Virat Kohli", "Shikhar Dhawan",
+                "Sachin Tendulkar",
+                "ABD", "Shane Watson", "Sdc", "Ksd");
+
+        System.out.println("\nOriginal List of Names : " + names);
+
+        // Natural Sorting Order..ie Based on the Alphabet case sensitive.
+        System.out.println("\nNatural Sorting Order : " + names.stream().sorted().toList());
+
+        // Custom Sorting of String
+
+        Comparator<String> comparator = (s1, s2) -> {
+            int l1 = s1.length();
+            int l2 = s2.length();
+            return (l1 < l2 ? -1 : l1 > l2 ? +1 : s1.compareTo(s2));
+        };
+
+        System.out.println("\nBased On Increasing Lenght: " + names.stream().sorted(comparator).toList());
     }
 }
