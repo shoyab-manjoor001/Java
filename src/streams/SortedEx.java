@@ -13,6 +13,8 @@ public class SortedEx {
         alist.add(32);
         alist.add(68);
         alist.add(33);
-        System.out.println(alist);
+        System.out.println("List before Sorting: " + alist);
+
+        System.out.println("List After Sorting: " + alist.stream().sorted().toList());
     }
 }
