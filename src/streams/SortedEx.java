@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class SortedEx {
 
@@ -16,5 +17,15 @@ public class SortedEx {
         System.out.println("List before Sorting: " + alist);
 
         System.out.println("List After Sorting: " + alist.stream().sorted().toList());
+
+        // List<Integer> ar = alist.stream().sorted((i1, i2) -> ((i1 < i2) ? 1 : (i1 >
+        // i2) ? -1 : 0)).toList();
+
+        System.out.println("Sorting in Descending oreder: "
+                + alist.stream().sorted((i1, i2) -> ((i1 < i2) ? 1 : (i1 > i2) ? -1 : 0)).toList());
+
+        System.out.println("Sorting in Ascending Order: "
+                + alist.stream().sorted((i1, i2) -> ((i1 < i2) ? -1 : (i1 < i2) ? 1 : 0)).toList());
+
     }
 }
