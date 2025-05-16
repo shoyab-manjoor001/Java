@@ -12,7 +12,7 @@ public class FrequecnyCount {
         String str = "HelloWorld";
         IntStream stream = str.chars();
 
-        stream.map(c->(char)c).collect(
-                Collectors.groupingBy(Function.identity() )
+        // stream.map(c->(char)c).collect(
+        // Collectors.groupingBy(Function.identity() )
     }
 }
