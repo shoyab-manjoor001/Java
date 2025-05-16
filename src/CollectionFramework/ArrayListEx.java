@@ -1,6 +1,10 @@
 package src.CollectionFramework;
 
+import javax.sound.midi.Soundbank;
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.RandomAccess;
 
 public class ArrayListEx {
 
@@ -27,7 +31,7 @@ public class ArrayListEx {
         ArrayList arr3 = new ArrayList<>();
         arr3.add(12);
         arr3.add("a");
-//        arr.removeAll(arr3);
+        arr.removeAll(arr3);
 
         System.out.println(arr);
 
@@ -46,5 +50,19 @@ public class ArrayListEx {
 
         arr.clear();
         System.out.println(arr);
+
+        ArrayList l1 = new ArrayList();
+        LinkedList l2 =  new LinkedList();
+
+        System.out.println("\nAbout ArrayList:");
+        System.out.println("ArrayList is Serializable : "+(l1 instanceof Serializable));
+        System.out.println("Arraylist is Clonable: "+(l1 instanceof Cloneable));
+        System.out.println("ArrayList is instance of RandomAcees : "+ (l1 instanceof RandomAccess));
+
+        System.out.println("\nAbout LinkedList:");
+        System.out.println("LinkedList is Serializable : "+(l2 instanceof Serializable));
+        System.out.println("LinkedList is Clonable: "+(l2 instanceof Cloneable));
+        System.out.println("LinkedList is instance of RandomAcees : "+ (l2 instanceof RandomAccess));
+
     }
 }
