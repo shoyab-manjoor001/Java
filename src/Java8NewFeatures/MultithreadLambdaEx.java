@@ -1,4 +1,4 @@
-package src.Java8Features;
+package src.Java8NewFeatures;
 
 public class MultithreadLambdaEx {
 
