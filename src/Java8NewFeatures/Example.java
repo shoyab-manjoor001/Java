@@ -1,4 +1,4 @@
-package src.Java8NewFeatures;
+package Java8NewFeatures;
 
 interface A {
 
