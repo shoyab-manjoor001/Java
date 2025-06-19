@@ -1,5 +1,3 @@
-package src.Java8NewFeatures;
-
 interface InnerLambdaEx2 {
     public void add(int a, int b);
 

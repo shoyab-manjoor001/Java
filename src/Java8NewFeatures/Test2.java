@@ -1,5 +1,3 @@
-package src.Java8NewFeatures;
-
 interface I {
 
     public void m1();

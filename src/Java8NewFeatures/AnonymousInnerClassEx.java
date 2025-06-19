@@ -1,5 +1,3 @@
-package src.Java8NewFeatures;
-
 public class AnonymousInnerClassEx {
 
     public static void main(String[] args) {

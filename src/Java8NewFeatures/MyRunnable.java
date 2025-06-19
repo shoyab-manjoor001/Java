@@ -1,5 +1,3 @@
-package src.Java8NewFeatures;
-
 public class MyRunnable implements Runnable {
 
     @Override

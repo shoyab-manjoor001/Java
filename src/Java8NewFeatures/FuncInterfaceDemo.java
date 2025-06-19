@@ -1,5 +1,3 @@
-package src.Java8NewFeatures;
-
 public class FuncInterfaceDemo {
 
     public static void main(String[] args) {

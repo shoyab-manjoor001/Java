@@ -1,5 +1,3 @@
-package Java8NewFeatures;
-
 interface A {
 
     public void show();

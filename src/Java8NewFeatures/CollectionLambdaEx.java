@@ -1,5 +1,3 @@
-package src.Java8NewFeatures;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;

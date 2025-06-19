@@ -1,5 +1,3 @@
-package src.Java8NewFeatures;
-
 import java.util.Comparator;
 
 public class MyComparator implements Comparator<Integer> {

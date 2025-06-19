@@ -1,5 +1,3 @@
-package src.Java8NewFeatures;
-
 @FunctionalInterface
 public interface FuncInterfaceEx2 extends FuncInterfaceEx {
 
