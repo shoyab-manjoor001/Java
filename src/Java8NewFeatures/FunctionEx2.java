@@ -35,7 +35,7 @@ public class FunctionEx2 {
 
         // 2. BiFunction Example.
         display.accept("\nExample OF Bifunction:");
-        BiFunction<Integer, Integer, Integer> sum = (a, b) -> a + b;
+        BiFunction<Integer, Integer, Long> sum = (a, b) -> Long.valueOf(a + b);
         display.accept("Sum of a and b : " + (sum.apply(45, 56)) + "\n");
 
     }
