@@ -1,7 +1,4 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class ArrayListEx2 {
 
@@ -26,7 +23,6 @@ public class ArrayListEx2 {
             System.out.println(obj);
         }
 
-        
     }
 
 }
