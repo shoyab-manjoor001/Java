@@ -21,6 +21,11 @@ public class HashSetEx {
         hashSet.add(null);
         hashSet.addAll(ll);
 
+        Utility.print.accept(hashSet.contains("A"));
+        Utility.print.accept(hashSet.getClass().getName());
+        Utility.print.accept(hashSet.toArray().length);
+        Utility.print.accept(hashSet.size());
+
         Utility.print.accept(hashSet + "");
 
     }
