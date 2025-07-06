@@ -1,10 +1,11 @@
+import java.util.Collections;
 import java.util.TreeSet;
 
 public class TreeSetEx {
 
     public static void main(String[] args) {
 
-        TreeSet treeSet = new TreeSet();
+        TreeSet treeSet = new TreeSet(Collections.reverseOrder());
         treeSet.add(12);
         treeSet.add(52);
         treeSet.add(74);
@@ -28,6 +29,12 @@ public class TreeSetEx {
         treeSet2.add(new StringBuffer("e"));
         treeSet2.add(new StringBuffer("F"));
         treeSet2.add(new StringBuffer("g"));
+
+        Utility.print.accept(treeSet2.first());
+        Utility.print.accept(treeSet2.last());
+        Utility.print.accept(treeSet2.pollFirst());
+        Utility.print.accept(treeSet2.pollLast());
+        Utility.print.accept(treeSet2.toArray());
 
         // Utility.print.accept(treeSet2 + "");
         System.out.println(treeSet2);
