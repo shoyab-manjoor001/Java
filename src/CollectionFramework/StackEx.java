@@ -1,4 +1,3 @@
-import java.io.Console;
 import java.util.Stack;
 import java.util.function.Consumer;
 

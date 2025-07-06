@@ -48,14 +48,12 @@ class Test2_1 implements I {
 
     @Override
     public void m1() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'm1'");
+        System.out.println("Inside M1");
     }
 
     @Override
     public void m2() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'm2'");
+        System.out.println("Inside m2");
     }
 }
 
@@ -63,14 +61,12 @@ class Test2_2 implements I {
 
     @Override
     public void m1() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'm1'");
+        System.out.println("Inside m1 method");
     }
 
     @Override
     public void m2() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'm2'");
+        System.out.println("Inside Method m2");
     }
 
 }
