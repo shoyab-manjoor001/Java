@@ -92,7 +92,8 @@ public class StreamApiDemo {
         // print frquency of each elament
 
         Map<Integer, Long> hashMap = numbers.stream().collect(Collectors.groupingBy(n -> n, Collectors.counting()));
-        printer.accept("\n" + hashMap);
+        // printer.accept("\n" + hashMap);
+        hashMap.forEach((k,v)->System.out.println(k + " : "+ v));
 
         // finding duplicates in the list
         numbers.stream()
