@@ -1,5 +1,10 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class StreamApiDemo {
 
@@ -13,6 +18,15 @@ public class StreamApiDemo {
         for (int i = 1; i <= 20; i++) {
             numbers.add(i);
         }
+
+        List<String> names = Arrays.asList("Rani", "Raj", "Rohit", "Sita", "Raman", "Anil");
+
+        numbers.add(10);
+        numbers.add(15);
+        numbers.add(20);
+        numbers.add(5);
+        numbers.add(3);
+        numbers.add(7);
 
         printer.accept(numbers);
 
@@ -49,8 +63,68 @@ public class StreamApiDemo {
         printer.accept(reduce);
 
         // printing min of all numbers in the list using stream
-        printer.accept("\n\nPrinting Min of All Numbers using Stream:");    
+        printer.accept("\n\nPrinting Min of All Numbers using Stream:");
         reduce = numbers.stream().min((a, b) -> a.compareTo(b)).get();
         printer.accept(reduce);
+
+        // Sort List in Acending and Descending Order
+        System.out.println("\n\nSorting List in Ascending Order:");
+
+        Stream<Integer> sorted = numbers.stream().sorted((a, b) -> a.compareTo(b));
+        sorted.forEach(printer);
+
+        System.out.println("\n\nSorting List in Descending Order:");
+        Stream<Integer> sortDesc = numbers.stream().sorted((a, b) -> b.compareTo(a));
+        sortDesc.forEach(val -> printer.accept(val));
+
+        // remove duplicates from list
+        System.out.println("\n\nRemoving Duplicates from List:");
+        Stream<Integer> distinct = numbers.stream().distinct();
+        distinct.forEach(printer);
+
+        // Filter names starting with R
+        System.out.println("\n\nFiltering Names starting with R:");
+
+        List<String> newList = names.stream().filter(str -> str != null && (str.startsWith("R") || str.startsWith("r")))
+                .collect(Collectors.toList());
+        printer.accept(newList);
+
+        // print frquency of each elament
+
+        Map<Integer, Long> hashMap = numbers.stream().collect(Collectors.groupingBy(n -> n, Collectors.counting()));
+        printer.accept("\n" + hashMap);
+
+        // finding duplicates in the list
+        numbers.stream()
+                .collect(Collectors.groupingBy(n -> n, Collectors.counting()))
+                .entrySet().stream()
+                .filter(entry -> entry.getValue() > 1)
+                .map(entry -> entry.getKey())
+                .forEach(printer);
+
+        // Frequ
+
+
+        String s1= "hello, welcome to the programming world";
+        
+        // char[] ch = s1.toCharArray();
+        // for (char c : ch) {
+        //     System.out.println(c);
+        // }
+
+        System.out.println("\n\nFinding frequency of each character in the string:");
+        s1.chars()
+        .mapToObj(c->(char)c)
+        .collect(Collectors.groupingBy(c->c,Collectors.counting()))
+        .forEach((k,v)->System.out.println(k + " : " + v));
+               
+        
+        System.out.println("\n\nFinding duplicate characters in the string:");
+        s1.chars()
+        .mapToObj(c-> (char)c)
+        .collect(Collectors.groupingBy(c->c,Collectors.counting()))
+        .entrySet().stream()
+        .filter(entry->entry.getValue() > 1)
+        .map(entry->entry.getKey()).forEach(printer);
     }
 }
