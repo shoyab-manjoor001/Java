@@ -93,7 +93,7 @@ public class StreamApiDemo {
 
         Map<Integer, Long> hashMap = numbers.stream().collect(Collectors.groupingBy(n -> n, Collectors.counting()));
         // printer.accept("\n" + hashMap);
-        hashMap.forEach((k,v)->System.out.println(k + " : "+ v));
+        hashMap.forEach((k, v) -> System.out.println(k + " : " + v));
 
         // finding duplicates in the list
         numbers.stream()
@@ -103,29 +103,32 @@ public class StreamApiDemo {
                 .map(entry -> entry.getKey())
                 .forEach(printer);
 
-        // Frequ
-
-
-        String s1= "hello, welcome to the programming world";
-        
-        // char[] ch = s1.toCharArray();
-        // for (char c : ch) {
-        //     System.out.println(c);
-        // }
+        String s1 = "hello, welcome to the programming world";
 
         System.out.println("\n\nFinding frequency of each character in the string:");
         s1.chars()
-        .mapToObj(c->(char)c)
-        .collect(Collectors.groupingBy(c->c,Collectors.counting()))
-        .forEach((k,v)->System.out.println(k + " : " + v));
-               
-        
+                .mapToObj(c -> (char) c)
+                .collect(Collectors.groupingBy(c -> c, Collectors.counting()))
+                .forEach((k, v) -> System.out.println(k + " : " + v));
+
+        // findind duplicates in the String.
         System.out.println("\n\nFinding duplicate characters in the string:");
         s1.chars()
-        .mapToObj(c-> (char)c)
-        .collect(Collectors.groupingBy(c->c,Collectors.counting()))
-        .entrySet().stream()
-        .filter(entry->entry.getValue() > 1)
-        .map(entry->entry.getKey()).forEach(printer);
+                .mapToObj(c -> (char) c)
+                .collect(Collectors.groupingBy(c -> c, Collectors.counting()))
+                .entrySet().stream()
+                .filter(entry -> entry.getValue() > 1)
+                .map(entry -> entry.getKey()).forEach(printer);
+
+        // Partitioning the list into even and odd numbers
+        printer.accept("\n\nFinal List of Numbers:");
+        numbers.stream().forEach(printer);
+
+        Map<Boolean, List<Integer>> partition = numbers.stream().collect(Collectors.partitioningBy(i -> i % 2 == 0));
+        printer.accept("\n\nEven Numbers:");
+        printer.accept(partition.get(true));
+
+        printer.accept("\n\nOdd Numbers:");
+        printer.accept(partition.get(false));
     }
 }
