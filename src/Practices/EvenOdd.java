@@ -3,6 +3,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+// Given a list of integers, find out all the even numbers that exist in the list using Stream functions?
+
 public class EvenOdd {
 
     public static void main(String[] args) {
