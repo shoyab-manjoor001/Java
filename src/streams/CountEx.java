@@ -21,5 +21,18 @@ public class CountEx {
       List<Integer> list = alist.stream().filter(i -> i<35).collect(Collectors.toList());
       System.out.println("Failed Students: "+list);
       System.out.println("No. of Failed Students: "+ list.stream().count());
+      
+       List<Integer> number = new ArrayList<Integer>();
+	    
+	    for(int i=0;i<=10;i++)
+	    {
+	        number.add((int) (Math.random() * 100));
+	    }
+	    
+	    System.out.println(number);
+	    
+	    List<Integer> even = number.stream().filter(n->n%2==0).collect(Collectors.toList());
+	    System.out.println("Even Number : "+even);
+	    System.out.println("Number of even : "+ even.stream().count());
     }
 }
