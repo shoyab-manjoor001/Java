@@ -16,12 +16,19 @@ public class MapEx {
         alist.add(68);
         alist.add(33);
 
-        List<Integer> list = alist.stream().filter(i -> i<35).toList();
-        System.out.println("Failed Students: "+list);
-        System.out.println("No. of Failed Students: "+ (long) list.size());
+        List<Integer> list = alist.stream().filter(i -> i < 35).toList();
+        System.out.println("Failed Students: " + list);
+        System.out.println("No. of Failed Students: " + (long) list.size());
 
-         List<Integer> updatedList = list.stream().map(i -> i+5).toList();
-         System.out.println("After Grace Marks of Students: "+updatedList);
+        List<Integer> updatedList = list.stream().map(i -> i + 5).toList();
+        System.out.println("After Grace Marks of Students: " + updatedList);
 
+        List<Integer> number = new ArrayList<Integer>();
+        for (int i = 0; i < 10; i++) {
+            number.add((int) (Math.random() * 100));
+        }
+        System.out.println("\nList of number : " + number);
+        System.out.println("Square of each number:\n");
+        number.stream().map(n -> n * n).forEach(n -> System.out.println(n));
     }
 }
