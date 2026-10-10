@@ -1,6 +1,5 @@
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Optional;
 
 public class CountEx
 {
@@ -14,13 +13,6 @@ public class CountEx
 	    
 	    Long count = numbers.stream().count();
 	    
-	    if(count!=null)
-	    {
-	        System.out.println(count);
-	    }
-	    else
-	    {
-	        System.out.println("List is Empty");
-	    }
+	    System.out.println(count);
 	}
 }
